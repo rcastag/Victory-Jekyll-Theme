@@ -1,0 +1,4 @@
+name: Paralax Test
+markdown: redcarpet
+pygments: true
+permalink: /:title
