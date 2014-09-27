@@ -1,0 +1,9 @@
+    <div class="sb-slidebar sb-left">
+      <ul>
+      <li class="post-heading">Posts</li>
+      {% for post in site.posts %}
+      	<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+      	
+      </ul>
+    </div>

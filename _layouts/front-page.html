@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <title>
+    {% for post in site.posts limit:1 %}
+    {{ post.title }}
+    {% endfor %}
+  </title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/slidebars.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div id="sb-site"><!-- SlideBars -->
+
+    <div class="parallax">
+
+      <div id="group2" class="parallax__group1">
+        <div class="parallax__layer parallax__layer--back1">
+           {% include header.html %}
+              <div class="img" style="background: url({% for post in site.posts limit:1 %}
+                  {{ post.header-image }}
+                  {% endfor %}) no-repeat center center; background-size: cover;">
+                <h1 class="heading">
+                  {% for post in site.posts limit:1 %}
+                  {{ post.title }}
+                  {% endfor %}
+                </h1>
+              </div>
+        </div>
+      </div>
+
+        <div id="group3" class="parallax__group">
+          <div class="parallax__layer parallax__layer--fore">
+          </div>
+          <div class=" parallax__layer parallax__layer--base">
+            {{content}}
+           {% include footer.html %}
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+</div><!-- SlideBars -->
+
+
+   
+    {% include side-nav.html %}
+    {% include scripts.html %}
+</body>
+</html>
