@@ -17,20 +17,38 @@
           <div class="parallax__layer parallax__layer--fore">
           </div>
           <div class=" parallax__layer parallax__layer--base">
+          
             {{content}}
-           {% include footer.html %}
+
+      {% if page.previous != nil %}
+
+         <h2 class="next-post">Next Post</h2> 
+            <div class="footer-img" 
+            style="background: url({{ page.previous.header-image }}) no-repeat center center; background-size: cover;">
+              <h1 class="footer-title"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></h1>
+             </div>
+
+      {% else %}
+
+        <h2 class="next-post">First Post</h2> 
+          <div class="footer-img" 
+            style="background: url({% for post in site.posts limit:1 %} 
+                {{ post.header-image }} 
+            {% endfor %}) 
+          no-repeat center center; background-size: cover;">
+            {% for post in site.posts limit:1 %}
+              <h1 class="footer-title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+             {% endfor %}
+          </div>
+
+       {% endif %}
+
+          {% include footer.html %}
           </div>
         </div>
-
-
-
-
       </div>
 
 </div><!-- SlideBars -->
-
-
-   
     {% include side-nav.html %}
     {% include scripts.html %}
 </body>

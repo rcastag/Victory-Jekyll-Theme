@@ -1,0 +1,18 @@
+---
+text: This Blog is About Volcanos around the world
+---
+{% include head.html %}
+
+	<div class="about-page" 
+		style="background: url({% for post in site.posts limit:1 %} 
+		 {{ post.header-image }} 
+		 {% endfor %}) 
+		 no-repeat center center; background-size: cover;">
+		       <div class="about-head">
+			      <h1 class="site-heading-about">
+			         <a href="/">{{ site.name }}</a>
+			      </h1>
+		       </div>
+					<h2 class="about-text"><a href="/">{{ page.text }}</a></h2>
+	</div>
+	

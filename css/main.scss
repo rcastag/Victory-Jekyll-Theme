@@ -1,4 +1,14 @@
- 
+ /* ****PRELOAD**** */
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+/* ****PRELOAD**** */
+
+$move-up-body: -10em;
+
 
  $lato: 'Lato', sans-serif;
 
@@ -15,6 +25,61 @@
   }
 
 
+@mixin animate ($title, $time, $timing_function) {
+    -webkit-animation: $title $time $timing_function; 
+  -moz-animation:    $title $time $timing_function; 
+  -o-animation:      $title $time $timing_function; 
+  animation:         $title $time $timing_function;
+   }
+
+@mixin body-fade ($title) {
+
+  @-webkit-keyframes $title {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+  }
+  @-moz-keyframes $title {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+  }
+  @-o-keyframes $title {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+  }
+  @keyframes $title {
+  0%   { opacity: 0;}
+  100% { opacity: 1;}
+  }
+}
+
+@mixin move-up-body ($title) {
+
+  @-webkit-keyframes $title {
+  0%   { opacity: 0;
+       bottom:$move-up-body; }
+  100% { opacity: 1;
+     bottom: 0em; }
+  }
+  @-moz-keyframes $title {
+  0%   { opacity: 0;
+       bottom:$move-up-body; }
+  100% { opacity: 1;
+     bottom: 0em; }
+  }
+  @-o-keyframes $title {
+  0%   { opacity: 0;
+       bottom:$move-up-body; }
+  100% { opacity: 1;
+     bottom: 0em; }
+  }
+  @keyframes $title {
+  0%   { opacity: 0;
+       bottom:$move-up-body; }
+  100% { opacity: 1;
+     bottom: 0em; }
+  }
+}
+
     /* Parallax base styles
   --------------------------------------------- */
 
@@ -22,9 +87,10 @@
 body, html {
     overflow: hidden;
   }
-
+@include move-up-body (body-fade);
   body {
     font: 100% / 1.5 $lato;
+    @include animate (body-fade, .6s, ease-in-out);
   }
 
   * {
@@ -90,6 +156,12 @@ body, html {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
     z-index: 3;
+    @media only screen and (max-width: 322px){
+      -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    height:100vh;
+    margin-top:0;
+    }
   }
 
   .parallax {
@@ -135,6 +207,16 @@ body, html {
   /* style the groups
   --------------------------------------------- */
 
+body {
+
+}
+
+
+
+
+
+
+
 .header {
   position: relative;
   height: 100px;
@@ -154,16 +236,24 @@ body, html {
     font-family: $lato;
     font-size: 1.3em;
     padding: .5em .9em 0 0;
+    @media only screen and (max-width: 322px){
+        font-size: .9em;
+        padding:1em;
+    }
 }
 
   .img {
     width: 100%;
     height: 600px;
+    @media only screen and (max-width: 322px){
+      height:85vh;
+    }
   }
 
   .title {
     color:white;
     font-size: 1.5em;
+
   }
 
   .text {
@@ -171,8 +261,16 @@ body, html {
     max-width: 1200px;
     padding: 3em;
    color:#A8A8A8;
-   font-size: 1em;
+   line-height:1.7 ;
+   font-size: .92em;
    font-family: $lato;
+   @media only screen and (max-width: 1000px){
+    font-size: .8em; 
+   }
+    @media only screen and (max-width: 768px){
+        font-size: .7em; 
+        padding:2em; 
+    }
   }
 
   .heading {
@@ -182,8 +280,16 @@ body, html {
     color: white;
     font-size: 4em;
     font-family: $lato;
+    @media only screen and (max-width: 1100px){
+      font-size: 3.2em;
+    }
+    @media only screen and (max-width: 768px){
+      font-size: 2em;
+    }
+    @media only screen and (max-width: 322px){
+      font-size: 1.6em;
+    }
   }
-
 
 .menu_link {
   padding:.4em;
@@ -226,20 +332,113 @@ body, html {
       
     }
   }
+  @media only screen and (max-width: 322px){
+    font-family: $lato;
+  font-size: 1.1em; 
+  }
 }
+
 .post-heading {
 font-size: 1.6em;
 color: gray; 
 }
+
+.next-post {
+  padding:0 0 2em 0;
+  font-family: $lato;
+  font-size: .9em;
+  text-align: center;
+  color:#A8A8A8; 
+}
+
 .footer {
   height: 100px;
   background:#F5FAFF;
 }
 
+.footer-img {
+    width: 100%;
+    height: 300px;
+    @media only screen and (max-width: 322px){
+      height: 200px;
+    }
+  }
+
+   .footer-title {
+    @include link-styles (white, white, 10%, 0.2s );
+    position: relative;
+    top: 24%;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+    font-family: $lato;
+    @media only screen and (max-width: 1000px){
+      font-size: 2.8em;
+    }
+    @media only screen and (max-width: 768px){
+      top: 25%;
+      font-size: 2em;
+    }
+    @media only screen and (max-width: 322px){
+      top: 15%;
+      font-size: 1.4em;
+      padding:0 1em ;
+    }
+  }
+
 .footer-inner {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+
+.about-page {
+  width: 100%;
+  height: 100vh;
+}
+
+.about-text {
+  @include link-styles (white, white, 10%, 0.2s );
+  margin: 0 auto;
+  position: relative;
+  top: 10%;
+  padding: 3em;
+  text-align: center;
+  font-size: 4em;
+  font-family: $lato;
+  color: white;
+  max-width: 1220px;
+  @media only screen and (min-width: 1200px){
+    top: -5%;
+      font-size: 5em;
+  }
+
+  @media only screen and (max-width: 768px){
+    font-size: 2.5em;
+    padding: 2em;
+  }
+  @media only screen and (max-width: 322px){
+    font-size: 2em;
+    padding: 2em;
+  }
+}
+
+.about-head {
+  height: 90px; 
+  width: 100%;
+  min-width: 100%;
+  background:#F5FAFF; 
+}
+.site-heading-about {
+   @include link-styles (#C2C2C2, #C2C2C2, 10%, 0.2s );
+    position:relative;
+    text-align: center;
+    font-family: $lato;
+    font-size: 2.5em;
+    padding: .3em 0 0 0;
+    @media only screen and (max-width: 322px){
+      font-size: 1.8em;
+    }
 }
 
 

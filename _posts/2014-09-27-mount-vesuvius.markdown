@@ -3,7 +3,7 @@ layout: post
 title:  Mount Vesuvius
 date:   2014-09-27 07:51:04
 categories: Volcanos
-header-image: /assets/volcano.jpg
+header-image: /assets/vesuvius.jpg
 ---
 
 Mount Vesuvius (Italian: Monte Vesuvio, Latin: Mons Vesuvius) is a stratovolcano in the Gulf of Naples, Italy, about 9 km (5.6 mi) east of Naples and a short distance from the shore. It is one of several volcanoes which form the Campanian volcanic arc. Vesuvius consists of a large cone partially encircled by the steep rim of a summit caldera caused by the collapse of an earlier and originally much higher structure.
