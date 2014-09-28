@@ -207,16 +207,6 @@ body, html {
   /* style the groups
   --------------------------------------------- */
 
-body {
-
-}
-
-
-
-
-
-
-
 .header {
   position: relative;
   height: 100px;
@@ -260,7 +250,7 @@ body {
     margin: 0 auto;
     max-width: 1200px;
     padding: 3em;
-   color:#A8A8A8;
+   color:#C9C9C9;
    line-height:1.7 ;
    font-size: .92em;
    font-family: $lato;
@@ -312,7 +302,7 @@ body {
 }
 
 .sb-slidebar {
-  @include link-styles (gray, gray, 10%, 0.2s );
+  @include link-styles (#A8A8A8, #A8A8A8, 10%, 0.2s );
   height: 100vh;
   overflow-y: auto; 
   position: fixed;
@@ -348,7 +338,7 @@ color: gray;
   font-family: $lato;
   font-size: .9em;
   text-align: center;
-  color:#A8A8A8; 
+  color:#C9C9C9; 
 }
 
 .footer {
@@ -434,8 +424,9 @@ color: gray;
     position:relative;
     text-align: center;
     font-family: $lato;
-    font-size: 2.5em;
-    padding: .3em 0 0 0;
+    font-size: 3em;
+    padding: .1em 0 0 0;
+    z-index: 10;
     @media only screen and (max-width: 322px){
       font-size: 1.8em;
     }

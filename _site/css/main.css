@@ -195,7 +195,7 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   padding: 3em;
-  color: #A8A8A8;
+  color: #C9C9C9;
   line-height: 1.7;
   font-size: .92em;
   font-family: "Lato", sans-serif; }
@@ -253,10 +253,10 @@ body {
   background-color: #E8F1FF;
   -webkit-transform: translate(0px); }
   .sb-slidebar a:link, .sb-slidebar a:visited {
-    color: gray;
+    color: #a8a8a8;
     transition: color 0.2s ease-in; }
   .sb-slidebar a:hover, .sb-slidebar a:active {
-    color: #676767; }
+    color: #8e8e8e; }
   .sb-slidebar ul {
     padding: 1em 3em 0 3em; }
     .sb-slidebar ul li {
@@ -277,7 +277,7 @@ body {
   font-family: "Lato", sans-serif;
   font-size: .9em;
   text-align: center;
-  color: #A8A8A8; }
+  color: #C9C9C9; }
 
 .footer {
   height: 100px;
@@ -362,8 +362,9 @@ body {
   position: relative;
   text-align: center;
   font-family: "Lato", sans-serif;
-  font-size: 2.5em;
-  padding: .3em 0 0 0; }
+  font-size: 3em;
+  padding: .1em 0 0 0;
+  z-index: 10; }
   .site-heading-about a:link, .site-heading-about a:visited {
     color: #c2c2c2;
     transition: color 0.2s ease-in; }
