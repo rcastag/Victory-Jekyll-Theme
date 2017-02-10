@@ -1,4 +1,4 @@
-name: Wampum
+name: Wampum Site
 markdown: redcarpet
 pygments: true
 permalink: /:title
